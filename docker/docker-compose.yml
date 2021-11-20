@@ -44,7 +44,7 @@ services:
             # The pguser and pgpassword values must be the same in the other containers
             # Ensure that these are correctly configured in your prod-config.env file
             - POSTGRES_USER=pguser
-            - POSTGRES_PASSWORD=pgpassword
+            - POSTGRES_PASSWORD=secret
         volumes:
             # Map 'data' volume such that postgres database is stored externally
             - data:/var/lib/postgresql/data/
@@ -116,4 +116,4 @@ volumes:
             o: bind
             # This directory specified where InvenTree data are stored "outside" the docker containers
             # Change this path to a local system path where you want InvenTree data stored
-            device: /path/to/data
+            device: /inventree-data
